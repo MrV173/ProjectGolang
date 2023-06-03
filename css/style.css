@@ -1,0 +1,58 @@
+nav {
+    height: 8vh;
+  }
+  
+  .container-fluid {
+    height: 92vh;
+  }
+  
+  .container-form {
+    width: 650px;
+  }
+  
+  .card {
+    border: 1px solid black !important;
+  }
+
+  .logo {
+    display: flex;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 20px;
+  }
+
+  h1 {
+    margin-top: 40px !important;
+    margin-bottom: 40px !important;
+    font-weight: bold !important;
+  }
+
+  .card {
+    margin-bottom: 30px !important;
+    margin-left: 10px !important;
+    margin-right: 10px !important;
+  }
+
+  label {
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .checkbox {
+    font-size: 30px;
+    font-weight: 200;
+  }
+
+  .form-check-label {
+  color: gray !important;
+  font-weight: bold !important;
+  margin-bottom: 15px !important;
+  }
+
+  h3 {
+    font-size: 20px !important;
+    font-weight: bold !important;
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+  }
+
