@@ -161,29 +161,7 @@ nav {
     display: none;
   }
 }
-
-@media only screen and (max-width: 550px) {
-  .skill {
-    flex-direction: column;
-  }
-
-  .nav-item {
-    display: none;
-  }
-
-  #barsmenu {
-    display: block;;
-  }
-}
-
-.sosmed {
-  font-size: 50px;
-  text-decoration: none;
-  color: black;
-  margin-left: 20px;
-}
-
-a {
-  text-decoration: none;
-  color: black;
-}
+ .card-img-top {
+  width: 100% !important;
+  object-fit: cover !important;
+ }
