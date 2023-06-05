@@ -1,5 +1,5 @@
 nav {
-    height: 8vh;
+    height: 13vh;
   }
   
   .container-fluid {
@@ -56,3 +56,134 @@ nav {
     margin-bottom: 10px !important;
   }
 
+  .blog-form {
+    padding: 50px 0px;
+    display: flex;
+    justify-content: center;
+    background-color: gainsboro;
+    font-size: 20px;
+    margin-bottom: 30px;
+    height: 1000px;
+}
+
+.post {
+  margin: auto;
+  display: grid;
+  grid-template-columns:auto auto auto;
+  align-items: center;
+  justify-content: space-around
+}
+
+.contact {
+  flex: 50%;
+  text-align: end;
+  margin-right: 25px;
+  padding: 20px;
+}
+
+.nav-right {
+  text-align: end;
+  margin-right: 40px;
+}
+
+.nav-right a {
+  background-color: red;
+  border-radius: 10px;
+  color: white;
+  padding: 15px;
+  border: none;
+  margin-top: 10PX;
+  font-size: 15px;
+  cursor: pointer;
+
+}
+
+#barsmenu {
+  display: none;
+  text-align: right;
+}
+
+.hamburger-nav-container {
+  font-size: 23px;
+  list-style-type: none;
+  display: none;
+}
+
+.hamburger-nav-container a {
+  text-decoration: none;
+  color: white;
+  background-color: grey;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border: 1px solid white;
+}
+
+.hamburger-nav-container .hamburger-active {
+  text-decoration: none;
+  color: white;
+  background-color: red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border: 1px solid white;
+}
+
+@media only screen and (max-width: 1000px) {
+  .card-container {
+      width: 100%;
+  }
+  .kiri {
+      height: 80%;
+  }
+
+  .kanan {
+      margin-left: 0;
+  }
+
+  section {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  #barsmenu {
+      display: block;
+      text-align: right;
+    }
+
+    .nav-item {
+      display: none;
+    }
+
+  #contact {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .skill {
+    flex-direction: column;
+  }
+
+  .nav-item {
+    display: none;
+  }
+
+  #barsmenu {
+    display: block;;
+  }
+}
+
+.sosmed {
+  font-size: 50px;
+  text-decoration: none;
+  color: black;
+  margin-left: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
