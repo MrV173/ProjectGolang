@@ -1,3 +1,8 @@
+* {
+  text-decoration: none;
+  font-family: 'Times New Roman', Times, serif;
+}
+
 nav {
     height: 13vh;
   }

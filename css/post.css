@@ -1,11 +1,8 @@
-* {
-    text-decoration: none;
-    font-family: 'Courier New', Courier, monospace;
-}
 
 .container {
     display: flex;
-    width: 100%;
+    width: 80%;
+    padding: 20px;
     margin: 30px;
 }
 
@@ -14,69 +11,17 @@
     justify-content: center;
 }
 
-nav ul li a {
-    color: white;
-}
-
-nav {
-    display: flex;
-    align-items: center;    
-    background-color: rgb(201, 194, 194);
-}
-
-nav ul {
-    display: flex;
-    list-style-type: none;
-    align-items: center;
-}
-
-nav ul li {
-    margin-right: 25px;
-    font-size: 20px;
-}
-
-nav ul li .active {
-    color: black;
-}
-
-nav ul li img {
-    width: 50px;
-}
-
-.nav-left{
-    flex: 50%;
-}
-
-.nav-right {
-    flex: 50%;
-    text-align: end;
-    margin-right: 25px;
-    padding: 20px;
-}
-
-.nav-right a {
-    background-color: red;
-    border-radius: 10px;
-    color: white;
-    padding: 15px;
-    border: none;
-    margin-top: 10PX;
-    font-size: 15px;
-    cursor: pointer;
-
-}
-
 body {
     padding: 0;
     margin: 0;
 }
 
 .kiri {
-    flex: 50%;
+    flex: 60%;
 }
 
 .kanan {
-    flex: 50%;
+    flex: 40%;
     margin-left: 50px;
     font-size: 25px;
 }
