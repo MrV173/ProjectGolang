@@ -1,0 +1,33 @@
+
+.container {
+    display: flex;
+    width: 80%;
+    padding: 20px;
+    margin: 30px;
+}
+
+.judul {
+    align-items: center;
+    justify-content: center;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.kiri {
+    flex: 60%;
+}
+
+.kanan {
+    flex: 40%;
+    margin-left: 50px;
+    font-size: 25px;
+}
+
+p {
+    padding: 30px; 
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+}

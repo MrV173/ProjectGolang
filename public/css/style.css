@@ -1,0 +1,173 @@
+* {
+  font-family: 'Times New Roman', Times, serif;
+}
+
+nav {
+    height: 13vh;
+  }
+  
+  .container-fluid {
+    height: 92vh;
+  }
+  
+  .container-form {
+    width: 650px;
+  }
+  
+  .card {
+    border: 1px solid black !important;
+    text-decoration: none !important;
+    text-decoration: black !important;
+  }
+
+  .logo {
+    display: flex;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 20px;
+  }
+
+  h1 {
+    margin-top: 40px !important;
+    margin-bottom: 40px !important;
+    font-weight: bold !important;
+  }
+
+  .card {
+    margin-bottom: 30px !important;
+    margin-left: 10px !important;
+    margin-right: 10px !important;
+  }
+
+  label {
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .checkbox {
+    font-size: 30px;
+    font-weight: 200;
+  }
+
+  .form-check-label {
+  color: gray !important;
+  font-weight: bold !important;
+  margin-bottom: 15px !important;
+  }
+
+  h3 {
+    font-size: 20px !important;
+    font-weight: bold !important;
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+  }
+
+  .blog-form {
+    padding: 50px 0px;
+    display: flex;
+    justify-content: center;
+    background-color: gainsboro;
+    font-size: 20px;
+    margin-bottom: 30px;
+    height: 1000px;
+}
+
+.post {
+  margin: auto;
+  display: grid;
+  grid-template-columns:auto auto auto;
+  align-items: center;
+  justify-content: space-around
+}
+
+.contact {
+  flex: 50%;
+  text-align: end;
+  margin-right: 25px;
+  padding: 20px;
+}
+
+.nav-right {
+  text-align: end;
+  margin-right: 40px;
+}
+
+.nav-right a {
+  background-color: red;
+  border-radius: 10px;
+  color: white;
+  padding: 15px;
+  border: none;
+  margin-top: 10PX;
+  font-size: 15px;
+  cursor: pointer;
+
+}
+
+#barsmenu {
+  display: none;
+  text-align: right;
+}
+
+.hamburger-nav-container {
+  font-size: 23px;
+  list-style-type: none;
+  display: none;
+}
+
+.hamburger-nav-container a {
+  text-decoration: none;
+  color: white;
+  background-color: grey;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border: 1px solid white;
+}
+
+.hamburger-nav-container .hamburger-active {
+  text-decoration: none;
+  color: white;
+  background-color: red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border: 1px solid white;
+}
+
+@media only screen and (max-width: 1000px) {
+  .card-container {
+      width: 100%;
+  }
+  .kiri {
+      height: 80%;
+  }
+
+  .kanan {
+      margin-left: 0;
+  }
+
+  section {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  #barsmenu {
+      display: block;
+      text-align: right;
+    }
+
+    .nav-item {
+      display: none;
+    }
+
+  #contact {
+    display: none;
+  }
+}
+ .card-img-top {
+  width: 100% !important;
+  object-fit: cover !important;
+ }
