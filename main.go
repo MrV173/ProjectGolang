@@ -1,12 +1,38 @@
 package main
 
 import (
+	"fmt"
 	"html/template"
 	"net/http"
 	"strconv"
+	"time"
 
 	"github.com/labstack/echo/v4"
 )
+
+type Blog struct {
+	Title    string
+	Content  string
+	Author   string
+	PostDate string
+}
+
+var dataBlog = []Blog{
+
+	{
+		Title:    "judul 2",
+		Content:  "Content 2",
+		Author:   "hakim",
+		PostDate: "07/06/2023",
+	},
+
+	{
+		Title:    "judul 4",
+		Content:  "Content 4",
+		Author:   "haki",
+		PostDate: "07/06/2023",
+	},
+}
 
 func main() {
 	e := echo.New()
@@ -22,9 +48,10 @@ func main() {
 	e.GET("/contact", contact)
 	e.GET("/post", addproject)
 	e.GET("/testimonials", testimonials)
-	e.GET("/post/:id", blogDetail)
+	e.GET("/posts/:id", blogDetail)
 
 	e.POST("/add-blog", addBlog)
+	e.POST("/blog-delete/:id", deleteBlog)
 
 	e.Logger.Fatal(e.Start(":5000"))
 }
@@ -40,7 +67,11 @@ func home(c echo.Context) error {
 		return c.JSON(http.StatusInternalServerError, map[string]string{"message": err.Error()})
 	}
 
-	return tmpl.Execute(c.Response(), nil)
+	blogs := map[string]interface{}{
+		"Blogs": dataBlog,
+	}
+
+	return tmpl.Execute(c.Response(), blogs)
 }
 
 func contact(c echo.Context) error {
@@ -74,12 +105,24 @@ func testimonials(c echo.Context) error {
 }
 
 func blogDetail(c echo.Context) error {
+
 	id, _ := strconv.Atoi(c.Param("id"))
 
+	var BlogDetail = Blog{}
+
+	for i, data := range dataBlog {
+		if id == i {
+			BlogDetail = Blog{
+				Title:    data.Title,
+				Content:  data.Content,
+				PostDate: data.PostDate,
+				Author:   data.Author,
+			}
+		}
+	}
+
 	data := map[string]interface{}{
-		"id":      id,
-		"Title":   "Judul 1",
-		"Content": "voluptate ad ipsum commodi itaque. Aut impedit molestiae delectus dicta perspiciatis debitis numquam, nihil sit ut quam exercitationem reiciendis quisquam blanditiis ex et ducimus hic eius provident repudiandae unde. Velit eius cupiditate unde ratione perferendis architecto pariatur modi officiis veniam, adipisci mollitia praesentium culpa, vel, alias at aspernatur quod optio perspiciatis nulla magnam quidem nemo sint! Earum adipisci facilis tenetur, illo obcaecati provident tempora. Reprehenderit fugiat nam ad neque laborum illum quibusdam! Aliquam ab qui voluptates quidem fugiat ratione nemo voluptas, quas atque repellendus numquam quo saepe dolores. Dolore fugiat molestias minima impedit dolor incidunt tenetur magni dicta quas harum sunt corporis alias voluptatum, rerum excepturi nulla error fuga mollitia aspernatur, quisquam, provident repellendus animi delectus consequuntur. Facere animi alias natus deleniti reprehenderit, nesciunt eum consequatur minus consectetur nostrum cupiditate explicabo dolor voluptas labore laborum culpa consequuntur nam dolorum obcaecati laboriosam eveniet accusamus omnis voluptate. Asperiores, beatae! A, ut excepturi dolorum ducimus nobis iusto, suscipit culpa ipsam dolorem nam voluptates voluptatibus voluptatum quo reiciendis maxime, adipisci rerum illum dolores itaque quos! Aut, expedita eius. Eveniet dolore doloremque assumenda amet quidem reprehenderit debitis distinctio suscipit rem veniam, quae doloribus asperiores molestiae incidunt sit tempora quos. Neque quam illo temporibus fugiat eveniet odio explicabo corporis rerum non at provident, accusamus, repellat earum iusto, modi tenetur reprehenderit repellendus nostrum nemo. Vero delectus pariatur animi, aliquid dolore modi maiores suscipit cupiditate amet odit, perspiciatis ratione recusandae, id libero excepturi inventore aut qui minima architecto perferendis. Maiores illum dolorum aut voluptatibus similique doloremque quam ut debitis sint alias nam atque et quo, maxime accusamus hic tempore sit tenetur. Mollitia illo ipsa recusandae suscipit illum minus aliquam beatae, ducimus doloribus eligendi dicta omnis expedita nesciunt a voluptatem vero iure molestias. Quis rem, repellendus necessitatibus maiores accusantium quisquam ipsa officiis! Unde distinctio, nihil natus repellendus repellat, quo libero consectetur laborum itaque neque quos provident qui. Inventore mollitia maiores rem perspiciatis incidunt, atque tempore, assumenda natus illo obcaecati sint!",
+		"Blog": BlogDetail,
 	}
 
 	var tmpl, err = template.ParseFiles("views/post.html")
@@ -97,6 +140,27 @@ func addBlog(c echo.Context) error {
 
 	println("Title : " + title)
 	println("Content : " + content)
+
+	var newBlog = Blog{
+		Title:    title,
+		Content:  content,
+		Author:   "anon",
+		PostDate: time.Now().String(),
+	}
+
+	dataBlog = append(dataBlog, newBlog)
+
+	fmt.Println(dataBlog)
+
+	return c.Redirect(http.StatusMovedPermanently, "/")
+}
+
+func deleteBlog(c echo.Context) error {
+	id, _ := strconv.Atoi(c.Param("id"))
+
+	fmt.Println("index :", id)
+
+	dataBlog = append(dataBlog[:id], dataBlog[id+1:]...)
 
 	return c.Redirect(http.StatusMovedPermanently, "/")
 }

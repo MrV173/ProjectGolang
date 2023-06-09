@@ -46,54 +46,21 @@
     <a href="contact">Contact</a>
     <a href="testimonials">Testimoni</a>
   </div>
-
-            <center>
-            <div class="judul">
-                <h1>Dumbways WEB App</h1>
-            </div>
-            </center>
-    <div class="container">
-        <div class="kiri">
-            <div>
-            <img src="/public/img/foto2.jpg" style="object-fit: cover; width: 100%;">
-            </div>
-        </div>
-        <div class="kanan">    
-            <div>
-                <h3>Duration</h3>
-                <div>
-                <i class="fa-solid fa-calendar-days"></i> 15 May 2023 - 14 June 2023
-                </div>
-                <div style="margin-top: 15px;">
-                <i class="fa-brands fa-ioxhost"></i> 1 Month
-                </div>
-                <h3>Technologies</h3>
-                    <div style="display: flex;">
-                <div>
-                <i class="fa-brands fa-react"></i> React JS
-                </div>
-                <div style="margin-left: 40px;"> 
-                <i class="fa-brands fa-node-js"></i> Node JS
-                </div>
-                    </div>
-                    <div style="display: flex">   
-                <div style="margin-top: 15px;">
-                <i class="fa-brands fa-square-js"></i> JavaScript
-                <i class="fa-solid fa-bolt"></i></i> Socket IO
-                </div>
-                    </div>
-            </div>
-        </div>    
+ 
+  <div class="blog-detail">
+    <div class="blog-detail-container">
+      <h1>{{.Blog.Title}}</h1>
+      <div class="author">{{.Blog.PostDate}} | {{.Blog.Author}}</div>
+      <img src="/public/images/blog-img-detail.png" alt="blog_detail" />
+      <p>{{.Blog.Content}}</p>
     </div>
-    <center>
-    <h1>{{.Title}}</h1>
-    <p>{{.Content}}</p>
-    </center>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-      crossorigin="anonymous"
-    ></script>
-    <script src="/public/js/hamburger.js"></script>
+  </div>
+   
 </body>
+<script
+src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+crossorigin="anonymous"
+></script>
+<script src="/public/js/hamburger.js"></script>
 </html>
