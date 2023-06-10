@@ -140,16 +140,17 @@
 <center>
 <h1>MY PROJECT</h1>
 </center>
-<div class="container text-center">
-    
-      {{range $index, $data := .Blogs}}
-      <a href="/posts/:id">
+<div class="post">
+
+  <div>
+  {{range $index, $data := .Blogs}}
+  <div class="container text-center">
       <div class="card" style="width: 20rem;">
-        <img src="public/img/foto2.jpg" class="card-img-top" alt="..." style="padding: 10px; border-radius: 20px;">
+        <img src="/public/img/foto2.jpg" lass="card-img-top" alt="..." style="padding: 10px; border-radius: 20px;">
         <div class="card-body">
-          <h5 class="card-title">{{ $data.Title }}</h5>
-          <p>{{ $data.PostDate }} | {{ $data.Author }}</p>
-          <p class="card-text">{{ $data.Content }} | Index: {{$index}} </p>
+          <h5 class="card-title">{{ $data.Name }}</h5>
+          <p>{{ $data.StartDate }} | {{ $data.EndDate }}</p>
+          <p class="card-text">{{ $data.Description }} |{{ $data.Technologies }} </p>
           <div class="logo">
             <div><i class="fa-brands fa-google-play"></i></div>
             <div style="margin-left: 15px;"><i class="fa-brands fa-android"></i></div>
@@ -173,8 +174,9 @@
         </div>
       </div>
     </div>
-    </a>
-    {{end}}
+  </div>
+  {{end}}
+</div>
 </div>
 
     <script src="public/js/hamburger.js"></script>
