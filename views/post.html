@@ -35,17 +35,16 @@
           <i class="fa-2x fa-solid fa-bars"></i>
         </button>
       </li>
-    </div> 
-    {{if .DataSession.IsLogin}}
-    <a href="#" style="text-decoration: none; color: black; display:flex;">Hello, {{.DataSession.Name}}</a>
-    <form id="myform" action="/logout" method="POST"></form>
-    <button onclick="document.getElementById('myform').submit()"class="btn-auth">Logout</button>
-    {{else}}
-    <a href="/register" class="btn-auth me-3" style="text-decoration: none; color: black; font-weight: bold;">Register</a>
-    <a href="/login" class="btn-auth me-5" style="text-decoration: none; color: black; font-weight: bold;">Login</a>
-    {{end}}
-
+    </div>   
     <div class="contact">
+      {{if .DataSession.IsLogin}}
+      <a href="#" style="text-decoration: none; color: black; display:flex;">Hello, {{.DataSession.Name}}</a>
+      <form id="myform" action="/logout" method="POST"></form>
+      <button onclick="document.getElementById('myform').submit()"class="btn-auth border border-0 bg-danger me-2 p-2 rounded text-white">Logout</button>
+      {{else}}
+      <a href="/register" class="btn-auth me-3" style="text-decoration: none; color: black; font-weight: bold;">Register</a>
+      <a href="/login" class="btn-auth me-5" style="text-decoration: none; color: black; font-weight: bold;">Login</a>
+      {{end}}
       <a href="/contact" id="contact" class="btn bg-danger text-white px-1">Contact Me</a>
     </div>
   </nav>
@@ -84,7 +83,6 @@
 <div class="kanan">    
     <div>
         <h3>Duration</h3>
-        <h4>By : {{ .Blog.Author }}</h4>
         <div>
         <i class="fa-solid fa-calendar-days"></i> {{.Blog.Start}} - {{.Blog.End}}
         </div>
@@ -105,7 +103,8 @@
             {{ if .Blog.PHP }} <i class="fa-brands fa-php"></i> {{ end }}
             {{ if .Blog.NextJs }} <i class="fa-brands fa-neos"></i> {{ end }}
           </div>
-              </div>
+          </div>
+           <h3>Written By :</h3> {{ .Blog.Author }}
     </div>
 </div>    
 </div>

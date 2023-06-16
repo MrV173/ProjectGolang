@@ -274,40 +274,23 @@ func addBlog(c echo.Context) error {
 	end_date := c.FormValue("inputEndDate")
 	description := c.FormValue("inputDescription")
 
-	nodejs := c.FormValue("nodejs")
-	if nodejs == "true" {
-		var NJS = nodejs
-		var njs, err = strconv.ParseBool(NJS)
-		if err == nil {
-			fmt.Println(njs)
-		}
+	var nodejs bool
+	if c.FormValue("nodejs") == "true" {
+		nodejs = true
 	}
 
-	reactjs := c.FormValue("reactjs")
-	if reactjs == "true" {
-		var RJS = reactjs
-		var rjs, err = strconv.ParseBool(RJS)
-		if err == nil {
-			fmt.Println(rjs)
-		}
+	var reactjs bool
+	if c.FormValue("reactjs") == "true" {
+		reactjs = true
+	}
+	var nextjs bool
+	if c.FormValue("nextjs") == "true" {
+		nextjs = true
 	}
 
-	nextjs := c.FormValue("nodejs")
-	if nextjs == "true" {
-		var NXJ = nextjs
-		var nxj, err = strconv.ParseBool(NXJ)
-		if err == nil {
-			fmt.Println(nxj)
-		}
-	}
-
-	php := c.FormValue("php")
-	if php == "true" {
-		var PHP = php
-		var Php, err = strconv.ParseBool(PHP)
-		if err == nil {
-			fmt.Println(Php)
-		}
+	var php bool
+	if c.FormValue("php") == "true" {
+		php = true
 	}
 
 	image := c.Get("dataFile").(string)
@@ -418,40 +401,23 @@ func update(c echo.Context) error {
 	end_date := c.FormValue("inputEndDate")
 	description := c.FormValue("inputDescription")
 
-	nodejs := c.FormValue("nodejs")
-	if nodejs == "true" {
-		var NJS = nodejs
-		var njs, err = strconv.ParseBool(NJS)
-		if err == nil {
-			fmt.Println(njs)
-		}
+	var nodejs bool
+	if c.FormValue("nodejs") == "true" {
+		nodejs = true
 	}
 
-	reactjs := c.FormValue("reactjs")
-	if reactjs == "true" {
-		var RJS = reactjs
-		var rjs, err = strconv.ParseBool(RJS)
-		if err == nil {
-			fmt.Println(rjs)
-		}
+	var reactjs bool
+	if c.FormValue("reactjs") == "true" {
+		reactjs = true
+	}
+	var nextjs bool
+	if c.FormValue("nextjs") == "true" {
+		nextjs = true
 	}
 
-	nextjs := c.FormValue("nodejs")
-	if nextjs == "true" {
-		var NXJ = nextjs
-		var nxj, err = strconv.ParseBool(NXJ)
-		if err == nil {
-			fmt.Println(nxj)
-		}
-	}
-
-	php := c.FormValue("php")
-	if php == "true" {
-		var PHP = php
-		var Php, err = strconv.ParseBool(PHP)
-		if err == nil {
-			fmt.Println(Php)
-		}
+	var php bool
+	if c.FormValue("php") == "true" {
+		php = true
 	}
 
 	image := c.Get("dataFile").(string)

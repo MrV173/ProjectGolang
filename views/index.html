@@ -42,7 +42,7 @@
       {{if .DataSession.IsLogin}}
     <a href="#" style="text-decoration: none; color: black;">Hello, {{.DataSession.Name}}</a>
     <form id="myform" action="/logout" method="POST"></form>
-    <button onclick="document.getElementById('myform').submit()"class="btn-auth">Logout</button>
+    <button onclick="document.getElementById('myform').submit()"class="btn-auth border border-0 bg-danger me-2 p-2 rounded text-white">Logout</button>
     {{else}}
     <a href="/register" class="btn-auth me-3" style="text-decoration: none; color: black; font-weight: bold;">Register</a>
     <a href="/login" class="btn-auth me-5" style="text-decoration: none; color: black; font-weight: bold;">Login</a>
@@ -172,7 +172,7 @@
           <a href="posts/{{ $data.ID }}">
           <h5 class="card-title">{{ $data.Title }}</h5>
           </a>
-          <p> By : {{ $data.Author }}</p>
+          <p> Written by : {{ $data.Author }}</p>
           <p>{{ $data.Start }} | {{ $data.End }}</p>
           <p class="card-text">{{ $data.Description }} </p>
           <div class="logo">
