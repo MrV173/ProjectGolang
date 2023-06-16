@@ -35,7 +35,15 @@
       </li>
     </div> 
     <div class="contact">
-    <a href="contact.html" id="contact" class="btn bg-danger text-white px-1">Contact Me</a>
+      {{if .DataSession.IsLogin}}
+    <a href="#" style="text-decoration: none; color: black;">Hello, {{.DataSession.Name}}</a>
+    <form id="myform" action="/logout" method="POST"></form>
+    <button onclick="document.getElementById('myform').submit()"class="btn-auth">Logout</button>
+    {{else}}
+    <a href="/register" class="btn-auth me-3" style="text-decoration: none; color: black; font-weight: bold;">Register</a>
+    <a href="/login" class="btn-auth me-5" style="text-decoration: none; color: black; font-weight: bold;">Login</a>
+    {{end}}
+    <a href="contact" id="contact" class="btn bg-danger text-white px-1">Contact Me</a>
   </div>
   </nav>
   <div class="hamburger-nav-container" id="hamburger-nav-container">
@@ -44,6 +52,20 @@
     <a href="contact" class="hamburger-active">Contact</a>
     <a href="testimonials">Testimoni</a>
   </div>
+
+  {{ if .FlashMessage }}
+  {{  if .FlashStatus }}
+  <div class="alert alert-success alert-dismisable fade show" role="alert">
+    <strong>{{ .FlashMessage }} </strong>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  {{ else }}
+  <div class="alert alert-danger alert-dismisable fade show" role="alert">
+    <strong>{{ .FlashMessage }} </strong>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  {{ end }}
+  {{ end }}
 
       <div class="container-fluid d-flex justify-content-center ">
         <div class="container-form">

@@ -17,12 +17,12 @@ body {
 }
 
 .kiri {
-    flex: 60%;
+    flex: 50%;
 }
 
 .kanan {
-    flex: 40%;
-    margin-left: 50px;
+    flex: 50%;
+    margin-left: 10px;
     font-size: 25px;
 }
 
